@@ -170,7 +170,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
           (orientation == Orientation.portrait ? height / 4 : height / 2),
       child: Stack(
         children: <Widget>[
-          getRandomBackground(widget.height, widget.width ?? width),
+          // getRandomBackground(widget.height, widget.width ?? width),
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
@@ -217,7 +217,9 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                               padding: const EdgeInsets.all(5),
                               child: Text(
                                 widget.cvvCode.isEmpty
-                                    ? isAmex ? 'XXXX' : 'XXX'
+                                    ? isAmex
+                                        ? 'XXXX'
+                                        : 'XXX'
                                     : isAmex
                                         ? widget.cvvCode.length > 4
                                             ? widget.cvvCode.substring(0, 4)
